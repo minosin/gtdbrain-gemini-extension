@@ -1,0 +1,13 @@
+description = "Pick the next actions that fit where you are right now (optional context: calls, computer, errands, home…)"
+prompt = """Help the user decide what to do right now. Context hint from the user: "{{args}}".
+
+1. If a context was given, call `list_next_actions` with it; if the tool says the context is
+   unknown, pick the closest id from the list it returns and say which one you used. Otherwise
+   call `list_next_actions` with no filter.
+2. Pick the two or three actions that fit best (context, and any time or energy the user
+   mentioned) and say briefly why each fits.
+3. If nothing fits, call `list_projects`, find a project that has no matching next action, and
+   help the user define one with `create_card` (kind `action`, verb-first, in Next Actions).
+4. Finish with one suggestion the user can act on through you (start the first action, move
+   something to Waiting For, capture what came up).
+"""

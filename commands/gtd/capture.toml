@@ -1,0 +1,13 @@
+description = "Capture one or more things to your GTD Brain Inbox"
+prompt = """Capture the following to the user's GTD Brain Inbox: {{args}}
+
+- If the text holds several distinct items (separate lines, "and", commas between unrelated
+  things), call `capture` once per item, each with a short, specific title. Keep any detail that
+  does not belong in the title in `notes`.
+- If nothing was given after the command, ask what to capture — invite the user to empty their
+  head and list everything, then capture each item.
+- Do not clarify, prioritise, or assign contexts now; capture goes to the Inbox raw. Clarifying
+  happens in `/gtd:inbox-zero`.
+- Confirm with the created titles in one line, and if any item obviously needs several steps,
+  offer to turn it into a project with a first next action.
+"""

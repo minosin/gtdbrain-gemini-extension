@@ -1,0 +1,14 @@
+{
+  "name": "gtdbrain",
+  "version": "1.0.0",
+  "description": "Your Getting Things Done (GTD) board in Gemini CLI: capture to Inbox, next actions by context, projects, Waiting For, and a guided weekly review — over GTD Brain's hosted MCP server. Sign in with an email code, no API key.",
+  "mcpServers": {
+    "gtdbrain": {
+      "httpUrl": "https://mcp.gtdbrain.com/api/gtdbrain/v1/mcp",
+      "oauth": {
+        "enabled": true
+      }
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

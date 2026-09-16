@@ -1,0 +1,25 @@
+description = "Check that GTD Brain is connected and signed in, and how to sign in if not"
+prompt = """Diagnose the connection to the `gtdbrain` MCP server and give the user concrete next steps.
+Never open a browser yourself, never ask for credentials, and never invent an OAuth URL, device
+code, or token — sign-in is owned by Gemini CLI, not by you.
+
+1. Call the `list_contexts` tool with no arguments (a free schema lookup; it does not spend the
+   user's trial allowance).
+2. Branch on the result:
+
+**A — The call succeeds.** Reply in one or two lines: GTD Brain is connected; the user can ask
+you to capture something, list next actions (optionally by context), review projects or Waiting
+For, or run `/gtd:weekly-review`. If the contexts are only defaults and the board looks freshly
+seeded, mention that the starter cards can be archived whenever they like.
+
+**B — The tool is not available, or the call fails with 401 / "authentication required".**
+Tell the user to run `/mcp auth gtdbrain`. A browser tab opens on GTD Brain's sign-in page:
+enter an email, type the code that arrives, click **Allow**. No GTD Brain account is needed in
+advance — signing in with a new email creates one. If no browser can open (e.g. over SSH), the
+CLI prints the URL to open by hand. Then ask them to run `/gtd:setup` again to confirm.
+
+**C — Any other error.** Quote the error verbatim in one line, point to the guide at
+https://gtdbrain.com/connect/gemini-cli, and offer admin@minosin.com for support. Stop there.
+
+Do not call any other GTD Brain tool from this command.
+"""

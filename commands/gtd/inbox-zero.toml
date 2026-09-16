@@ -1,0 +1,16 @@
+description = "Process your GTD Brain Inbox to zero, one card at a time"
+prompt = """Process the user's GTD Brain Inbox to zero, one card at a time.
+
+1. Call `list_columns` to get the column ids, then `list_cards` with the Inbox column id.
+2. Take the cards oldest first. For each, state the title and ask what it really is, then act
+   with a tool:
+   - one step → phrase it verb-first, `move_card` to Next Actions, then `update_card` with a
+     context if the user gives one (`list_contexts` shows the valid ids);
+   - more than one step → `create_card` a project in Projects and `create_card` its first next
+     action in Next Actions, then `archive_card` the raw Inbox card;
+   - waiting on someone → `move_card` to Waiting For, then `update_card` with `who` and `since`;
+   - a someday idea → `move_card` to Someday/Maybe;
+   - done or no longer matters → `archive_card`.
+3. Wait for the user's answer before acting on each card; never batch-decide for them.
+4. When the Inbox is empty, summarise what changed and suggest `/gtd:what-now`.
+"""

@@ -1,0 +1,19 @@
+description = "Run your GTD weekly review — Get Clear, Get Current, Get Creative"
+prompt = """Run the user's GTD weekly review, reading every list with a tool and never from memory.
+Go one list at a time and wait for the user's answers.
+
+**Phase 1 — Get Clear.** Call `list_columns`, then `list_cards` for the Inbox, and clarify each
+card: a next action (`move_card` to Next Actions, `update_card` with a context), a project plus
+its first next action (`create_card` for each), a Waiting For card (`move_card`, then
+`update_card` with `who` and `since`), a Someday/Maybe card (`move_card`), or `archive_card`.
+
+**Phase 2 — Get Current.** Call `list_projects` and `list_next_actions`. For each project ask
+"Is this still moving, and is its next action right?" and flag any project with no next action
+so you define one together with `create_card`. Then call `list_waiting_for` and for each card
+ask "Still waiting? Follow up if it has gone stale."
+
+**Phase 3 — Get Creative.** `list_cards` for Someday/Maybe and ask for each: activate it
+(`move_card` to Next Actions or Projects), keep incubating, or let it go (`archive_card`).
+
+End with a short summary of what changed and one concrete next step.
+"""
