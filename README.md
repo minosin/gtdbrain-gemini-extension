@@ -11,6 +11,10 @@ The extension points Gemini CLI at GTD Brain's **hosted MCP server** (you sign i
 code — no API key, nothing to install) and adds a context file plus slash commands that teach
 Gemini the method.
 
+Away from the terminal, message the GTD Brain bot on Telegram
+([@GTDBrainBot](https://t.me/GTDBrainBot?start=gemini-cli-extension)), typed or as a voice note,
+and it lands in the same Inbox.
+
 ## What you get
 
 - **16 MCP tools** — `capture`, `list_next_actions`, `list_projects`, `list_waiting_for`,
